@@ -52,9 +52,10 @@ def get_players_data(df, analyze_features, league, position, season_min, season_
     age_df = position_df[position_df['Age'].between(age_min, age_max, 'both')]
     season_df = age_df[age_df['Season'].between(season_min, season_max, 'both')]
 
-    final_players = (season_df[analyze_features]
-                    [season_df[analyze_features] > season_df[analyze_features]
-                    .describe().loc['min']].dropna())
+    #final_players = (season_df[analyze_features]
+    #                [season_df[analyze_features] > season_df[analyze_features]
+    #                .describe().loc['min']].dropna())
+    final_players = season_df.copy()
 
     merged_df = final_players.merge(season_df[player_identification_demographics], left_index=True, right_index=True)
 

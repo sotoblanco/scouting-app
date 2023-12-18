@@ -3,3 +3,4 @@ openai
 streamlit
 plotly
 python-dotenv
+google.generativeai
