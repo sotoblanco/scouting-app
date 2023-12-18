@@ -55,11 +55,10 @@ def get_players_data(df, analyze_features, league, position, season_min, season_
     #final_players = (season_df[analyze_features]
     #                [season_df[analyze_features] > season_df[analyze_features]
     #                .describe().loc['min']].dropna())
-    final_players = season_df.copy()
 
-    merged_df = final_players.merge(season_df[player_identification_demographics], left_index=True, right_index=True)
+    #merged_df = final_players.merge(season_df[player_identification_demographics], left_index=True, right_index=True)
 
-    merged_pct = merged_df.merge(df_pct[columns_ending_with_pct], left_index=True, right_index=True)
+    merged_pct = season_df.merge(df_pct[columns_ending_with_pct], left_index=True, right_index=True)
 
     return merged_pct
 
