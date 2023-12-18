@@ -82,7 +82,7 @@ def analyze_with_chatgpt(data):
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv('../data/processed/ENG1_GPT2_clean.csv', index_col=0)
+    df = pd.read_feather('compressed_data.feather')
     return df
 
 df = load_data()
